@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "Bar chart with text labels. Apply scale padding to make the frame cover the labels.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/StuartB99/fit3179-ass-2/main/events.csv"
+  },
+  "transform": [{
+    "joinaggregate": [{
+      "op": "count",
+      "field": "event_type",
+      "as": "num_of_events"
+    }],
+    "groupby": ["event_type"]
+  },
+  {
+    "joinaggregate": [{
+      "op": "distinct",
+      "field": "eruption_number",
+      "as": "num_of_eruptions"
+    }]
+  },
+  {
+    "calculate": "datum.num_of_events/datum.num_of_eruptions * 100",
+    "as": "PercentOfTotal"
+  }],
+  "encoding": {
+    "y": {"field": "event_type", "type": "nominal", "title": "Event", "sort": "-x"},
+    "x": {"field": "PercentOfTotal", "type": "quantitative"}
+  },
+  "layer": [{
+    "mark": "bar"
+  }, {
+    "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "middle",
+      "dx": 3
+    },
+    "encoding": {
+      "text": {"field": "PercentOfTotal", "type": "quantitative", "format": ".2f"}
+    }
+  }]
+}
