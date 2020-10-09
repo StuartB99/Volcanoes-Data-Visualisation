@@ -1,0 +1,17 @@
+{
+  "title": "Volcano Types",
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple donut chart with embedded data.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/StuartB99/fit3179-ass-2/main/volcano.csv"
+  },
+  "selection": {
+    "pts": {"type": "single"}
+  },
+  "mark": {"type": "arc", "innerRadius": 50, "tooltip": true},
+  "encoding": {
+    "theta": {"aggregate": "count", "field": "volcano_number", "type": "quantitative", "title": "Number of Volcanoes"},
+    "color": {"field": "primary_volcano_type", "type": "nominal", "title": "Types"}
+  },
+  "view": {"stroke": null}
+}
