@@ -1,6 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "Bar chart with text labels. Apply scale padding to make the frame cover the labels.",
+  "title":"Possibility of the events to occur during an eruption",
   "data": {
     "url": "https://raw.githubusercontent.com/StuartB99/fit3179-ass-2/main/events.csv"
   },
@@ -25,7 +26,7 @@
   }],
   "encoding": {
     "y": {"field": "event_type", "type": "nominal", "title": "Event", "sort": "-x"},
-    "x": {"field": "PercentOfTotal", "type": "quantitative"}
+    "x": {"field": "PercentOfTotal", "type": "quantitative", "title": "Occurrence Possibility (%)"}
   },
   "layer": [{
     "mark": "bar"
