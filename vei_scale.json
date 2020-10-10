@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "values": [
+        {"VEI": "0", "Volume of Tephra":"0.00001 km^3", "State": "Effusive"},
+        {"VEI": "1", "Volume of Tephra":"0.001 km^3", "State": "Gentle"},
+        {"VEI": "2", "Volume of Tephra":"0.01 km^3", "State": "Explosive"},
+        {"VEI": "3", "Volume of Tephra":"0.1 km^3", "State": "Catastrophic"},
+        {"VEI": "4", "Volume of Tephra":"1 km^3", "State": "Cataclysmic"},
+        {"VEI": "5", "Volume of Tephra":"10 km^3", "State": "Paroxysmic"},
+        {"VEI": "6", "Volume of Tephra":"100 km^3", "State": "Colossal"},
+        {"VEI": "7", "Volume of Tephra":"1000 km^3", "State": "Super-colossal"}
+        ]
+  },
+  "width": 250,
+  "height": 400,
+  "title": "Volcano Explosivity Index [VEI]",
+  "encoding": {
+    "y": {
+      "field": "VEI",
+      "type": "nominal",
+      "sort": null,
+      "axis": {
+        "domain": false,
+        "offset": 50,
+        "labelFontWeight": "bold",
+        "ticks": false,
+        "grid": true,
+        "title": null
+      }
+    }
+  },
+  "view": {"stroke": null},
+  "layer": [
+    {
+      "mark": {"type":"circle", "tooltip":true},
+      "encoding": {
+        "size": {
+          "field": "Volume of Tephra",
+          "type": "nominal",
+          "title": "Volume of Tephra Erupted",
+          "legend": null,
+          "scale": {"range": [50, 5000]}
+        },
+        "color": {"value": "#cf1020"}
+      }
+    },
+    {
+      "mark": {"type": "text", "x": 30, "align": "right"},
+      "encoding": {
+        "text": {"field": "State"}
+      }
+    },
+    {
+      "mark": {"type": "text", "x": 255, "align": "left"},
+      "encoding": {
+        "text": {"field": "Volume of Tephra"}
+      }
+    }
+  ]  
+}
