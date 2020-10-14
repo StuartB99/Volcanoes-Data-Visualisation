@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 1500,
-  "height": 1200,
+  "width": 1800,
+  "height": 1500,
   "title": "Volcanoes Around the World",
-  "autosize":"fit",
+  "autosize":"fit", 
   "layer": [
     {
       "data": {
@@ -43,12 +43,13 @@
         "color": {"field": "elevation",
               "type": "quantitative",
               "scale": { "type": "threshold", "domain": [-2000,0, 2000, 4000], "range": ["#0571b0", "#92c5de", "#fd8d3c", "#cc4c02", "#7f2704"]},
-              "title": "Elevation (km)"},
+              "title": "Elevation (m)"},
         "tooltip":[
         {"field":"volcano_name", "title":"Volcano name"},
+        {"field":"last_eruption_year", "title":"Last Erupted Year"},
         {"field":"country", "title":"Country"},
-        {"field":"region", "title":"Region"},
         {"field":"subregion", "title":"Subregion"},
+        {"field":"region", "title":"Region"},
         {"field":"primary_volcano_type", "title":"Volcano type"},
         {"field":"elevation", "title":"Elevation"},
         {"field":"tectonic_settings", "title":"Tectonic Settings"},
