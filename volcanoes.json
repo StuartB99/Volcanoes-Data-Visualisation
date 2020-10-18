@@ -1,9 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 2300,
-  "height": 1200,
+  "width": 2000,
+  "height": 1000,
   "title": "Volcanoes Around the World",
   "autosize":"fit", 
+  "params": [
+    {"name": "Erupted_year_above", "value": -4000 ,"bind": { "input": "range", "min": -4000, "max": 2020,"step": 100, "name": "Minimum Year Erupted: " }}, 
+    {"name": "Elevation_above", "value": -2000 ,"bind": { "input": "range", "min": -2000, "max": 6000,"step": 500, "name": "Minimum Elevation: " }}],
   "layer": [
     {
       "data": {
@@ -26,6 +29,8 @@
       "data": {
         "url": "https://raw.githubusercontent.com/StuartB99/fit3179-ass-2/main/volcano.csv"
       },
+      "transform": [ {"filter": "datum.last_eruption_year > Erupted_year_above"}, 
+                    {"filter": "datum.elevation > Elevation_above"}],
       "projection": {
         "type": "equalEarth"
       },
