@@ -39,11 +39,11 @@
           "field": "latitude",
           "type": "quantitative"
         },
-        "size": {},
-        "color": {"field": "elevation",
+        "size": {"field": "elevation", "type": "quantitative", "title": "Elevation (m)"},
+        "color": {"field": "last_eruption_year",
               "type": "quantitative",
-              "scale": { "type": "threshold", "domain": [-2000,0, 2000, 4000], "range": ["#0571b0", "#92c5de", "#fd8d3c", "#cc4c02", "#7f2704"]},
-              "title": "Elevation (m)"},
+              "scale": { "type": "threshold", "domain": [-2000,-1000,0, 1000, 2000], "range": ["#2166ac", "#67a9cf", "#d1e5f0", "#fddbc7", "#ef8a62", "#ca0020"]},
+              "title": "Last Erupted Year"},
         "tooltip":[
         {"field":"volcano_name", "title":"Volcano name"},
         {"field":"last_eruption_year", "title":"Last Erupted Year"},
