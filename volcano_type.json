@@ -2,8 +2,8 @@
   "title": "Volcano Types",
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "A simple donut chart with embedded data.",
-  "width": 400,
-  "height":250,
+  "width": 500,
+  "height":300,
   "data": {
     "url": "https://raw.githubusercontent.com/StuartB99/fit3179-ass-2/main/volcano.csv"
   }, 
@@ -18,12 +18,12 @@
       "pts": {"type": "single"},
       "type_highlight": { "type": "multi", "fields": ["primary_volcano_type"]  , "bind": "legend" }
   },
-  "mark": {"type": "arc", "innerRadius": 60, "tooltip": true}
+  "mark": {"type": "arc", "innerRadius": 70, "tooltip": true}
   },
-  { "mark": { "type": "text","align": "right", "baseline": "middle", "dx": -130, "dy": -60, "fontSize": 11.5, "fontStyle": "italic"},
+  { "mark": { "type": "text","align": "right", "baseline": "middle", "dx": -140, "dy": -60, "fontSize": 11.5, "fontStyle": "italic"},
   "encoding": { "text": {"field": "primary_volcano_type", "type": "nominal"}, "color": {"value": "purple"}, "opacity": { "condition": { "test": "datum['primary_volcano_type'] == 'Stratovolcano'  ", "value": 1 }, "value": 0 }}
   },
-  { "mark": { "type": "text","align": "right", "baseline": "middle", "dx": 140, "dy":85, "fontSize": 11.5, "fontStyle": "italic"},
+  { "mark": { "type": "text","align": "right", "baseline": "middle", "dx": 170, "dy":95, "fontSize": 11.5, "fontStyle": "italic"},
   "encoding": { "text": {"field": "primary_volcano_type", "type": "nominal"}, "color": {"value": "#EECA3B"}, "opacity": { "condition": { "test": "datum['primary_volcano_type'] == 'Shield'  ", "value": 1 }, "value": 0 }}
   }
   ],  
