@@ -1,7 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 2000,
-  "height": 1000,
+  "width": "container",
   "title": "Volcanoes Around the World",
   "autosize":"fit", 
   "params": [
