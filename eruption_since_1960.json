@@ -12,7 +12,7 @@
       }
   },
   "data": {"url": "https://raw.githubusercontent.com/StuartB99/fit3179-ass-2/main/eruptions_by_month.csv"},
-  "mark": {"type":"rect", "tooltip":true},
+  "mark": {"type": "point", "shape": "", "tooltip":true},
   "encoding": {
       "x": {
           "field": "year",
@@ -29,18 +29,26 @@
           "type": "ordinal",
           "title": "Month"
       },
-      "color": {
-          "field": "number_of_eruptions",
-          "type": "quantitative",
-          "legend": {
+      "size":{
+        "field": "number_of_eruptions",
+        "type": "quantitative",
+        "legend": {
               "title": "Number of Eruptions"
           },
-          "scale": {"type":"threshold", "domain":[2,4,8]}
+        "scale": {"type":"threshold", "domain":[2,4,8], "range": [10, 80, 200, 400]}
       },
+      "color": {
+        "field":  " average_vei", 
+        "type": "quantitative",
+        "scale": { "type": "threshold", "domain": [1,  2, 3]},
+        "title": "Average VEI"
+      },
+      
       "tooltip": [
         {"field": "month", "type": "ordinal", "timeUnit": "month","title": "Month"},
         {"field": "year", "type": "ordinal", "timeUnit": "year", "title": "Year"},      
-        {"field": "number_of_eruptions", "type": "quantitative", "title": "Number of Eruptions"}
+        {"field": "number_of_eruptions", "type": "quantitative", "title": "Number of Eruptions"},
+        {"field": " average_vei", "type": "quantitative", "title": "Average VEI"}
     ]
   }
 }
