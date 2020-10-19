@@ -93,20 +93,41 @@
       
     </div>
     <!-- end pure grid group -->
-
+  
     <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-3">
         <div class="description description-left">
-          <h2>This is the third section</h2>
-          <p>Using all three columns without merging. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+          <p>Volcanoes have eruptions which is when they spew hot lava, volcanic ash and gases from a magma chamber below the surface of the planet. These eruptions crafts mountains as well as craters. </p>
         </div>
       </div>
       <div class="pure-u-1-3">
-        <div id="vis4"  class="vis-container"></div>
+        <div class="description description-left">
+          <p>Lava rivers spread into bleak landscapes.  But as time ticks by, the elements break down these volcanic rocks, liberating nutrients from their stony prisons and creating remarkably fertile soils that have allowed civilizations to flourish.</p>      
+        </div>
+      </div>
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <p>To measure the relative explosiveness of volcanoes, Volcanic Explosivity Index (VEI) is used. Devised in 1982, the volume of products, eruption cloud height, and qualitative observations (using terms ranging from "gentle" to "mega-colossal") are used to determine the explosivity value.</p>      
+        </div>
+      </div>
+    
+    </div>
+    <!-- end pure grid group -->
+   
+   
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <p>Volcanoes have eruptions which is when they spew hot lava, volcanic ash and gases from a magma chamber below the surface of the planet. These eruptions crafts mountains as well as craters. Lava rivers spread into bleak landscapes.  But as time ticks by, the elements break down these volcanic rocks, liberating nutrients from their stony prisons and creating remarkably fertile soils that have allowed civilizations to flourish.</p>
+        </div>
       </div>
       <div class="pure-u-1-3">
         <div id="vis3"  class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-3">
+        <div id="vis4"  class="vis-container"></div>
       </div>
     
     </div>
@@ -124,7 +145,9 @@
 <script type="text/javascript">
   var specVis1 = "./volcanoes.json";
   var specVis2= "./volcano_type.json";
-
+  var specVis3= "./eruption_since_1960.json";
+  var specVis4= "./vei_scale.json";
+  
   vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
@@ -133,11 +156,11 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#vis3', specVis1, {"actions": false}).then(function(result) {
+  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#vis4', specVis2, {"actions": false}).then(function(result) {
+  vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
