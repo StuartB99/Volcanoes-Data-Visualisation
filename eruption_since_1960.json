@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Eruptions Since 1960",
   "width": 700,
-  "height": 350,
+  "height":350,
   "config": {
       "view": {
           "strokeWidth": 0,
@@ -13,7 +13,7 @@
       }
   },
   "data": {"url": "https://raw.githubusercontent.com/StuartB99/fit3179-ass-2/main/eruptions_by_month.csv"},
-  "mark": {"type": "point", "shape": "", "tooltip":true},
+  "mark": {"type": "point", "shape": "diamond", "tooltip":true},
   "encoding": {
       "x": {
           "field": "year",
