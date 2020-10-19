@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Eruptions Since 1960",
-  "width": "container",
-  "height":"container",
+  "width": 800,
+  "height":350,
   "config": {
       "view": {
           "strokeWidth": 0,
