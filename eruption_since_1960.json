@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Eruptions Since 1960",
+  "width": 900, "height": 400,
+  "config": {
+      "view": {
+          "strokeWidth": 0,
+          "step": 5
+      },
+      "axis": {
+          "domain": true
+      }
+  },
+  "data": {"url": "https://raw.githubusercontent.com/StuartB99/fit3179-ass-2/main/eruptions_by_month.csv"},
+  "mark": {"type":"rect", "tooltip":true},
+  "encoding": {
+      "x": {
+          "field": "year",
+          "timeUnit": "year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {
+              "labelAngle": 0
+          }
+      },
+      "y": {
+          "field": "month",
+          "timeUnit": "month",
+          "type": "ordinal",
+          "title": "Month"
+      },
+      "color": {
+          "field": "number_of_eruptions",
+          "type": "quantitative",
+          "legend": {
+              "title": "Number of Eruptions"
+          },
+          "scale": {"type":"threshold", "domain":[2,4,8]}
+      },
+      "tooltip": [
+        {"field": "month", "type": "ordinal", "timeUnit": "month","title": "Month"},
+        {"field": "year", "type": "ordinal", "timeUnit": "year", "title": "Year"},      
+        {"field": "number_of_eruptions", "type": "quantitative", "title": "Number of Eruptions"}
+    ]
+  }
+}
