@@ -1,10 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title":"Possibility of the events to occur during an eruption",
+  "width": 400, "height": 800,
   "data": {
     "url": "https://raw.githubusercontent.com/StuartB99/fit3179-ass-2/main/events.csv"
   },
-  "transform": [{
+  "transform": [
+  {    
     "joinaggregate": [{
       "op": "count",
       "field": "event_type",
@@ -26,18 +28,19 @@
   "encoding": {
     "y": {"field": "event_type", "type": "nominal", "title": "Event", "sort": "-x"},
     "x": {"field": "PercentOfTotal", "type": "quantitative", "title": "Occurrence Possibility (%)"},
-    "color": {"value": "orangered"}
+    "color": {"value": "orangered"}    
   },
-  "layer": [{
-    "mark": "bar"},
+  "layer": [{"mark": {"type":"bar", "height": 10, "cornerRadiusEnd": 2}},
     { "mark": {
       "type": "text",
+      "font":"Helvetica Neue",
+      "fontSize": 15,
       "align": "left",
       "baseline": "middle",
       "dx": 1
     },
     "encoding": {
-      "text": {"field": "PercentOfTotal", "type":     "quantitative", "format": ".2f"}      
+      "text": {"field": "PercentOfTotal", "type":"quantitative", "format": ".2f"}, "color":{"value":"black"}
     }
   }]
 }
