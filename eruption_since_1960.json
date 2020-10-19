@@ -44,7 +44,7 @@
         "scale": { "type": "threshold", "domain": [1,  2, 3]},
         "title": "Average VEI"
       },
-      
+      "opacity": {"value":1},
       "tooltip": [
         {"field": "month", "type": "ordinal", "timeUnit": "month","title": "Month"},
         {"field": "year", "type": "ordinal", "timeUnit": "year", "title": "Year"},      
