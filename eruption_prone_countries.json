@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 1000,
-  "height": 450,
+  "width": 1100,
+  "height": 550,
   "title": "Eruptions Prone Countries",
   "data": {
     "url": "https://raw.githubusercontent.com/StuartB99/fit3179-ass-2/main/ne_110m.json",
@@ -18,7 +18,7 @@
     }}
   ],
   "projection": {
-    "type": "equirectangular"
+    "type": "equalEarth"
   },
   "mark": "geoshape",
   "encoding": {
