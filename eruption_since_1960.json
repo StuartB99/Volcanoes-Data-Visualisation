@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Eruptions Since 1960",
+  "title": "Pattern of Volcanic Eruption Frequency Since 1960",
   "width": 700,
   "height":350,
   "config": {
