@@ -3,6 +3,7 @@
   "title": "Pattern of Volcanic Eruption Frequency Since 1960",
   "width": 700,
   "height":350,
+  "background": "#ebf54e",
   "config": {
       "view": {
           "strokeWidth": 0,
