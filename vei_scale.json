@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "background":"beige",
   "data": {
     "values": [
         {"VEI": "0", "Volume of Tephra":"0.00001 km^3", "State": "Effusive"},
