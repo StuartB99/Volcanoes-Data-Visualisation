@@ -2,6 +2,7 @@
   "title": "Volcano Types",
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "A simple donut chart with embedded data.",
+  "background": "beige",
   "width": 500,
   "height":300,
   "data": {
