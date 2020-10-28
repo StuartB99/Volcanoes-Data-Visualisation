@@ -4,6 +4,7 @@
   "height": 630,
   "title": "Volcanoes Around the World",
   "autosize":"fit", 
+  "background": "lightblue",
   "params": [
     {"name": "Erupted_year_above", "value": -4000 ,"bind": { "input": "range", "min": -4000, "max": 2020,"step": 100, "name": "Minimum Year Erupted: " }}, 
     {"name": "Elevation_above", "value": -2000 ,"bind": { "input": "range", "min": -2000, "max": 6000,"step": 500, "name": "Minimum Elevation: " }}],
@@ -21,7 +22,7 @@
       },
       "mark": {
         "type": "geoshape",
-        "fill": "gray",
+        "fill": "lightgreen",
         "stroke": "black"
       }
     },
