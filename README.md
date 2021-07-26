@@ -1,1 +1,2 @@
-# fit3179-assignment-2
+# A Data Visualisation About Volcanoes
+- Uses vega-lite library
