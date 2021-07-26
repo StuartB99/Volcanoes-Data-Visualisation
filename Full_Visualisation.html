@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Volcano Eruptions</title>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+    <!-- Import vega-embed -->
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <!-- Import pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- custom style -->
+    <style>
+        *{
+          font-family: 'Source Sans Pro', sans-serif; 
+        }
+        h1{
+          font-weight: 600;
+          text-align: center;
+          font-size: 80px;
+          color: white; 
+        }
+         body{
+           background-color: lightslategrey;
+         }
+         .page{
+           width: 1350px;    
+           background-color: black;   
+           margin: auto;
+           padding: 50px;
+           padding-top: 35px;
+        }
+        .vis-container{
+          width: 100%;
+          font-size: 15px;  
+        }
+        .description p{
+          font-size: 25px;
+          color: white; 
+        }
+        .description h2, h1{
+          margin-top:0px;
+          color: white; 
+        }
+        .description-right {
+          padding-left: 20px;
+          color: white;
+        }
+        .description-left{
+          padding-right: 20px;
+          color: white;
+        }
+        .pure-g{
+          margin-bottom: 25px;
+          color: white;
+        }
+        .small-font{
+            font-size: 14px;
+            color: white;
+        }
+        .big-map{
+            margin: 0 auto;
+        }
+        .div-spacing{
+            height: 50px;
+        }
+        .container {
+          position: relative;
+          text-align: center;
+          color: white;          
+        }
+        /* Centered text */
+        .centered {
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+ <div class="page">
+     <!-- pure grid group: Title and First Texts -->
+     <div class="container">
+      <div class="pure-u-1-1">
+          <img src="https://www.thoughtco.com/thmb/RvU_4FHKmqJe691ZsLZCQSpMqmU=/2260x1271/smart/filters:no_upscale()/GettyImages-608873707-f359835d93ea4f0b95a50cbeeb839c05.jpg" width="1350px", height="500px">
+          <h1 class="centered">Volcano Eruptions</h1>
+        </div>
+    </div> 
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <div class="desdescription description-left">
+                <p class="description p"; style="font-size: 25px";>Volcanoes have been around since the Earth was formed billions of years ago. They are ruptures in the crust of a planetary-mass object such as Earth. There are volcanoes everywhere, on every continent, even Antarctica. Volcanoes can be found on land as well as under the ocean.</p>
+            </div>          
+        </div>
+        <div class="pure-u-1-2">
+            <div class="desdescription description-right">
+              <p class="description p"; style="font-size: 25px";>Volcanoes are Earth's geologic architects. They have created more than 80 percent of our planet's surface, laying the foundation that has allowed life to thrive. Although most volcanoes are not active, there is still quite a few that has erupted in the past 20 years. </p>       
+            </div>
+        </div>
+    </div>
+  <!-- end pure grid group -->
+
+    <!-- pure grid group: Big Map -->
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div id="vis1" class="big-map"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+     
+    <div class="div-spacing"></div>
+     
+    <!-- pure grid group: Volcano types + text -->
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div id="vis2"  class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-2">
+          <div class="description description-right">
+            <p class="description p">Not all volcanoes are the same. There are various different types of volcanoes. The most common one is the stratovolcano which is a tall, conical volcano composed of one layer of hardened lava, tephra, and volcanic ash. These volcanoes are characterized by a steep profile and periodic, explosive eruptions.</p>
+          </div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+  
+     <div class="div-spacing"></div>
+     
+    <!-- pure grid group: Eruptions text-->
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <p>Volcanoes have eruptions which is when they spew hot lava, volcanic ash and gases from a magma chamber below the surface of the planet. These eruptions crafts mountains as well as create craters. </p>
+        </div>
+      </div>
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <p>The chart below shows the number of eruptions recorded since 1960. From it, it is hard to identify any pattern. This indicates that volcanoes erupt randomly and irregularly with no fix months or period, making it hard to predict. </p>      
+        </div>
+      </div>
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <p>To measure the relative explosiveness of volcanoes, the Volcanic Explosivity Index (VEI) is used, ranging from 0 to 7. Devised in 1982, the volume of products, eruption cloud height, and qualitative observations are used to determine the explosivity value.</p>      
+        </div>
+      </div>
+    
+    </div>
+    <!-- end pure grid group -->
+   
+    <!-- pure grid group : Eruptions and VEI chart-->
+    <div class="pure-g">
+      <div class="pure-u-16-24">
+        <div id="vis3"  class="vis-container"></div>
+      </div>
+      <div class="pure-u-8-24">
+        <div id="vis4"  class="vis-container"></div>
+      </div>   
+    </div>
+    <!-- end pure grid group -->
+  
+    <div class="div-spacing"></div>
+     
+    <!-- pure grid group: Event types + text -->
+    <div class="pure-g">
+    <div class="pure-u-1-2">
+      <div class="description description-left">
+        <p>Each volcano eruption happens differently with different events occuring. However most burst into life in explosive eruptions and emit ash. Although lava is often synonymous with volcanoes, they only occur 29.7% of times. An unexcepted side effect of volcano eruptions are earthquakes which occur together with eruptions 16.5% of times.</p>
+        <p>Another surprising information, that is often in contrast to what people believe, is that eruptions that have loud audible noises are rare, occuring only 3.75% of times.</p>
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+      <div id="vis5"  class="vis-container"></div>
+    </div>
+    </div>
+    <!-- end pure grid group -->
+     
+    <div class="div-spacing"></div>
+     
+    <!-- pure grid group: Eruption Prone Countries + text -->
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="description description-left">
+            <p>Volcano eruptions does not happen consistently across different places. Some countries are more susceptible to volcano eruptions than others whereas some may not have volcanoes at all.</p>
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+          <div class="description description-right">
+            <p>The more eruption prone countries are New Zealand, Iceland, Italy and Japan among others. Most of Africa and the Middle East do not have volcanic eruptions. </p>
+          </div>
+        </div>
+    </div>
+     <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div id="vis6"  class="vis-container"></div>
+        </div>
+    </div>
+
+    <!-- end pure grid group -->
+     
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>This visualisation is created by <a href="https://github.com/StuartB99/" target="_blank">Stuart Boey</a>. The datasource for volcanoes are linked <a href="https://www.kaggle.com/jessemostipak/volcano-eruptions" target="_blank">here</a> and the datasource for countries are <a href="https://www.kaggle.com/fernandol/countries-of-the-world" target="_blank">here</a>. Image is sourced <a href="https://www.thoughtco.com/thmb/RvU_4FHKmqJe691ZsLZCQSpMqmU=/2260x1271/smart/filters:no_upscale()/GettyImages-608873707-f359835d93ea4f0b95a50cbeeb839c05.jpg" target="_blank">here.</a></p>
+      </div>
+    </div>
+  
+
+  </div> <!-- end page -->
+   
+<script type="text/javascript">
+  var specVis1 = "https://stuartb99.github.io/Volcanoes-Data-Visualisation/Visualisations/volcanoes.json";
+  var specVis2= "https://stuartb99.github.io/Volcanoes-Data-Visualisation/Visualisations/volcano_type.json";
+  var specVis3= "https://stuartb99.github.io/Volcanoes-Data-Visualisation/Visualisations/eruption_since_1960.json";
+  var specVis4= "https://stuartb99.github.io/Volcanoes-Data-Visualisation/Visualisations/vei_scale.json";
+  var specVis5= "https://stuartb99.github.io/Volcanoes-Data-Visualisation/Visualisations/event_type.json";
+  var specVis6= "https://stuartb99.github.io/Volcanoes-Data-Visualisation/Visualisations/eruption_prone_countries.json";
+  var imageUrl = "https://api.timeforkids.com/wp-content/uploads/2018/08/Hero-Volcano.jpg";
+  
+  vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+    
+    vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+    
+    vegaEmbed('#vis6', specVis6, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+</body>
+</html>

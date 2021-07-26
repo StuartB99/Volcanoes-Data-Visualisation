@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Pattern of Volcanic Eruption Frequency Since 1960",
+  "width": 700,
+  "height":350,
+  "background": "beige",
+  "config": {
+      "view": {
+          "strokeWidth": 0,
+          "step": 5
+      },
+      "axis": {
+          "domain": true
+      }
+  },
+  "data": {"url": "https://raw.githubusercontent.com/StuartB99/Volcanoes-Data-Visualisation/Dataset/eruptions_by_month.csv"},
+  "mark": {"type": "point", "shape": "diamond", "tooltip":true},
+  "encoding": {
+      "x": {
+          "field": "year",
+          "timeUnit": "year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {
+              "labelAngle": 0
+          }
+      },
+      "y": {
+          "field": "month",
+          "timeUnit": "month",
+          "type": "ordinal",
+          "title": "Month"
+      },
+      "size":{
+        "field": "number_of_eruptions",
+        "type": "quantitative",
+        "legend": {
+              "title": "Number of Eruptions"
+          },
+        "scale": {"type":"threshold", "domain":[2,4,8], "range": [10, 80, 200, 400]}
+      },
+      "color": {
+        "field":  " average_vei", 
+        "type": "quantitative",
+        "scale": { "type": "threshold", "domain": [1,  2, 3]},
+        "title": "Average VEI"
+      },
+      "opacity": {"value":1},
+      "tooltip": [
+        {"field": "month", "type": "ordinal", "timeUnit": "month","title": "Month"},
+        {"field": "year", "type": "ordinal", "timeUnit": "year", "title": "Year"},      
+        {"field": "number_of_eruptions", "type": "quantitative", "title": "Number of Eruptions"},
+        {"field": " average_vei", "type": "quantitative", "title": "Average VEI"}
+    ]
+  }
+}
